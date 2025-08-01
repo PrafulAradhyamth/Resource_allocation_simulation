@@ -1,28 +1,41 @@
-This folder contains the modified implementation of the multi TXOP simulator for latency analysis. The goal of this simulator is to enable the analysis of performance of different schedulers (AA and RR) in a setting with multiple TXOPs. It models a simplified communication system (in the uplink direction) comprised of one access point (AP) and a few stations. 
--------------
-| File tree |
--------------
+```
+# Multi-TXOP Simulator for Latency Analysis
+
+This directory contains a customized implementation of the multi-TXOP simulator designed for latency evaluation. The simulator supports performance analysis of various scheduling strategies, specifically the Assignment Algorithm (AA) and Round Robin (RR), within a multi-TXOP context. It simulates a simplified uplink communication scenario involving a single access point (AP) and several stations.
+
+---
+
+## File Structure
+
+```
+
 ├── classes/
 │   ├── AccessPoint.asv
 │   ├── AccessPoint.m
-│   ├── Counts.m -> Helper class for counting frame types
+│   ├── Counts.m                  # Helper class for tracking frame types
 │   ├── Frame.m
 │   ├── Queue.m
 │   ├── Station.m
+│
 ├── functions/
 │   ├── coinFlip.m
 │   ├── generateFrame.m
 │   ├── getStationInformation.m
 │   ├── getTypeCountsFromTable.m
-├── queueEvolutionExample.mlx --> queue evolution example notebook
-├── results/ [excluded]
+│
+├── queueEvolutionExample.mlx     # Notebook demonstrating queue evolution
+├── results/                      # Output directory (excluded)
+│
 ├── schedulers/
-│   ├── assignmentAlgorithmLatencyMultiTXOP.m --> AA (modified for multi TXOP and latency analysis)
-│   ├── roundRobinLatencyMultiTXOP.m --> RR (modified for multi TXOP and latency analysis)
-├── simulation.mlx --> simulation notebook
+│   ├── assignmentAlgorithmLatencyMultiTXOP.m    # AA scheduler (adapted for multi-TXOP and latency)
+│   ├── roundRobinLatencyMultiTXOP.m             # RR scheduler (adapted for multi-TXOP and latency)
+│
+├── simulation.mlx                # Main simulation notebook
+│
 ├── tables/
-│   ├── SNR_MCS_PDR_1458_LDPC.csv
-├── utils/ --> utils (MATLAB)
+│   ├── SNR\_MCS\_PDR\_1458\_LDPC.csv
+│
+├── utils/                        # General MATLAB utility functions
 │   ├── calculateSINR.m
 │   ├── heRUAllocationTable.m
 │   ├── heSuccessiveEqualize.m
@@ -31,7 +44,8 @@ This folder contains the modified implementation of the multi TXOP simulator for
 │   ├── heTBUser.m
 │   ├── tgaxLinkPerformanceModel.m
 │   ├── tgaxMMSEFilter.m
-├── utils_custom/ --> utils (custom)
+│
+├── utils\_custom/                 # Custom utility functions
 │   ├── assignmentMtxToSTASchedule.m
 │   ├── channelToSINR.m
 │   ├── configs/
@@ -44,3 +58,6 @@ This folder contains the modified implementation of the multi TXOP simulator for
 │   ├── optimProbSinglePPDU.m
 │   ├── PPDUTxTimeAssignmentAlgorithm.m
 │   ├── PPDUTxTimeRoundRobin.m
+
+```
+
